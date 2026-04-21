@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción al Curso</title>
+  
+  <style>
+    body { font-family: system-ui, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
+    header, footer { background-color: #2c3e50; color: #ffffff; text-align: center; padding: 1.5rem 1rem; }
+    main { max-width: 600px; margin: 2rem auto; background: #ffffff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    section.intro { margin-bottom: 2rem; text-align: center; }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 14px; }
+    input[type="text"], input[type="email"], input[type="date"] { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+    .radio-group { display: flex; gap: 1rem; }
+    .radio-label { font-weight: 400; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+    button { background-color: #3498db; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; font-size: 16px; cursor: pointer; width: 100%; }
+    button:hover { background-color: #2980b9; }
+    .req { color: #e74c3c; }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Inscripción al Bootcamp de Desarrollo</h1>
+  </header>
+
+  <main>
+    
+    <section class="intro">
+      <p>Bienvenido. Por favor, completa el siguiente formulario para reservar tu lugar en el próximo grupo de estudio. Asegúrate de llenar los campos obligatorios.</p>
+    </section>
+
+    <section>
+      <form action="/registro" method="POST">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre completo <span class="req">*</span></label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana Martínez">
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico <span class="req">*</span></label>
+          <input type="email" id="correo" name="correo" required placeholder="tu@correo.com">
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha de nacimiento</label>
+          <input type="date" id="fecha" name="fecha">
+        </div>
+
+        <div class="form-group">
+          <label>Nivel de experiencia previo:</label>
+          <div class="radio-group">
+            <label class="radio-label" for="nivel_ninguno">
+              <input type="radio" id="nivel_ninguno" name="nivel" value="ninguno" checked> Ninguno
+            </label>
+            <label class="radio-label" for="nivel_basico">
+              <input type="radio" id="nivel_basico" name="nivel" value="basico"> Básico
+            </label>
+            <label class="radio-label" for="nivel_avanzado">
+              <input type="radio" id="nivel_avanzado" name="nivel" value="avanzado"> Avanzado
+            </label>
+          </div>
+        </div>
+
+        <button type="submit">Enviar Solicitud</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bootcamp Semántico. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
